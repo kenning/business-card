@@ -3,84 +3,19 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    concat: {
-      
-      options: {
-        separator: ';'
-      },
-
-      dist: {
-        src: ['./public/**/*.js'],
-        dest: './public/dist/<%= pkg.name %>.js'
-      }
-    },
-
-    nodemon: {
-      dev: {
-        script: 'server.js'
-      }
-    },
-
     uglify: {
       dist: {
         files: {
-          './public/dist/<%= pkg.name %>.min.js' : ['<%= concat.dist.dest %>']
+          './dist/.min.js' : ['<%= concat.dist.dest %>']
         }
-      }
-    },
-
-    jshint: {
-      files: ['./dist/<%= pkg.name %>.min.js'],
-      options: {
-        force: 'true',
-        jshintrc: '.jshintrc',
-        ignores: [
-          'public/lib/**/*.js',
-          'public/dist/**/*.js'
-        ]
       }
     },
 
     cssmin: {
       target: {
         files: {
-          './css/dist/sass.min.css' : ['./css/sass.css'],
-          './css/dist/cardanimate.min.css' : ['./css/cardanimate.css']
-        }
-      }
-    },
-
-    watch: {
-      scripts: {
-        files: [
-          'public/client/**/*.js',
-          'public/lib/**/*.js',
-        ],
-        tasks: [
-          'concat',
-          'uglify'
-        ]
-      },
-      css: {
-        files: 'css/*.css',
-        tasks: ['cssmin']
-      }
-    },
-
-    shell: {
-      prodServer: {
-        command: 'git push origin master',
-        options: {
-            stdout: true,
-            stderr: true
-        }
-      },
-
-      herokuDeploy: {
-        command: 'git push heroku master',
-        options: {
-            stdout: true,
-            stderr: true
+          './dist/sass.min.css' : ['./css/sass.css'],
+          './dist/cardanimate.min.css' : ['./css/cardanimate.css']
         }
       }
     },
@@ -130,7 +65,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'concat','uglify','cssmin','postcss'
+    'cssmin','postcss'
   ]);
 
   grunt.registerTask('upload', function(n) {
