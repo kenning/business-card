@@ -1,11 +1,63 @@
 $bone: #E3DAC9;
+$tablet: "(min-width: 668px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
 
 body {
-  background: gray;
+  background: #333;
 }
 
 .card {
+  /*card itself*/
+  margin-left:auto;
+  margin-right:auto;
   background:$bone;
-  height:500px;
-  margin:50px;
+  background-image:url(../images/paper-texture.png);
+  background-size: 100% 100%;
+  -webkit-box-shadow: -8px 10px 52px -10px rgba(0,0,0,0.8);
+    -moz-box-shadow: -8px 10px 52px -10px rgba(0,0,0,0.8);
+      box-shadow: -8px 10px 52px -10px rgba(0,0,0,0.8);
+  position:relative;
+
+  /*media queries*/
+  height:133px;
+  width: 233px;
+  margin-top:50px;
+
+  @media #{$tablet} {
+    height:266px;
+    width: 366px;
+    margin-top:100px;
+  }
+  @media #{$desktop} {
+    height:400px;
+    width: 700px;
+    margin-top:150px;
+  }
+}
+
+/*Text*/
+
+.text{
+  color: #222;
+  text-shadow:0 1px 0 rgba(255,255,255,0.75);
+  position:absolute;
+  font-family: 'EB Garamond', serif;
+  opacity:.7;
+}
+.title-text{
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -60%);
+
+  /*media queries*/
+  font-size: 15px;
+  @media #{$tablet} {
+    font-size: 30px;
+  }
+  @media #{$desktop} {
+    font-size: 45px;
+  }
+}
+.small-text{
+
 }
