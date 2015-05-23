@@ -1,45 +1,48 @@
+/* line 1, ../sass/cardanimate.scss */
+.container {
+  perspective: 1000;
+}
+
+/* line 4, ../sass/cardanimate.scss */
 .card {
-  animation-duration: 1.5s;
-    -webkit-animation-duration: 1.5s;
-      -moz-animation-duration: 1.5s;  
-  animation-name: card;
-    -webkit-animation-name: card;
-      -moz-animation-name: card;
-  -webkit-transform: rotate(-6deg);
-    transform:rotate(-6deg);
+  animation-duration: 4s;
+  animation-name: cardEnter;
+  transform-style: preserve-3d;
 }
-@-webkit-keyframes card {
+
+@keyframes cardEnter {
+  /* line 10, ../sass/cardanimate.scss */
   0% {
-    -webkit-transform-origin: center;
-      transform-origin: center; 
-    -webkit-transform: translate(-500px,1000px) rotate(180deg); 
-      transform: translate(-500px,-1000px) rotate(180deg);
+    transform-origin: center;
+    transform: translate(-500px, -1000px) rotate(-180deg) rotateY(-180deg);
   }
-  100% {
-    -webkit-transform: rotate(-6deg);
-      transform:rotate(-6deg);
+
+  /* line 14, ../sass/cardanimate.scss */
+  50% {
+    transform: rotateY(-180deg) rotate(6deg) translate(100px, 100px);
   }
-}
-@keyframes card {
-  0% {
-    -webkit-transform-origin: center;
-      transform-origin: center; 
-    -webkit-transform: translate(-500px,1000px) rotate(180deg); 
-      transform: translate(-500px,-1000px) rotate(180deg);
-  }
-  100% {
-    -webkit-transform: rotate(-6deg);
-      transform:rotate(-6deg);
+
+  /* line 17, ../sass/cardanimate.scss */
+  60% {
+    transform: rotateY(-180deg) rotate(6deg) translate(100px, 100px);
   }
 }
 
-.cardFront{
-  /*
-  animation-timing-function: ease-in;
-  */
+/* line 22, ../sass/cardanimate.scss */
+.cardFront, .cardBack {
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
-.cardBack{
-  /*
-  animation-timing-function: ease-out;
-  */  
+
+/* line 31, ../sass/cardanimate.scss */
+.cardFront {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+/* line 35, ../sass/cardanimate.scss */
+.cardBack {
+  transform: rotateY(180deg);
 }

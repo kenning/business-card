@@ -1,19 +1,17 @@
-/* line 5, ../sass/sass.scss */
+/* line 7, ../sass/sass.scss */
 body {
   background: #333;
 }
 
-/* line 9, ../sass/sass.scss */
+/* line 11, ../sass/sass.scss */
 .card {
   /*card itself*/
   margin-left: auto;
   margin-right: auto;
-  background: #e3dac9;
+  background: #ddd6cd;
   background-image: url(../images/paper-texture.png);
   background-size: 100% 100%;
-  -webkit-box-shadow: -8px 10px 52px -10px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: -8px 10px 52px -10px rgba(0, 0, 0, 0.8);
-  box-shadow: -8px 10px 52px -10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 2px 1px #dddddd, -8px 10px 52px -10px rgba(0, 0, 0, 0.8);
   position: relative;
   /*media queries*/
   height: 133px;
@@ -21,15 +19,15 @@ body {
   margin-top: 50px;
 }
 @media (min-width: 668px) and (max-width: 1023px) {
-  /* line 9, ../sass/sass.scss */
+  /* line 11, ../sass/sass.scss */
   .card {
     height: 266px;
-    width: 366px;
+    width: 466px;
     margin-top: 100px;
   }
 }
 @media (min-width: 1024px) {
-  /* line 9, ../sass/sass.scss */
+  /* line 11, ../sass/sass.scss */
   .card {
     height: 400px;
     width: 700px;
@@ -40,17 +38,17 @@ body {
 /*Text*/
 /* line 40, ../sass/sass.scss */
 .text {
-  color: #222;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  color: #111111;
+  text-shadow: 0 1px 1px #fff,0 1px 2px #fff,0 2px 1px #fff;
   position: absolute;
-  font-family: 'EB Garamond', serif;
-  opacity: .7;
+  font-family: 'Vollkorn', serif;
+  opacity: .9;
 }
 
 /* line 47, ../sass/sass.scss */
 .title-text {
-  top: 50%;
   left: 50%;
+  top: 47%;
   transform: translate(-50%, -60%);
   /*media queries*/
   font-size: 15px;
@@ -66,4 +64,61 @@ body {
   .title-text {
     font-size: 45px;
   }
+}
+
+/* line 61, ../sass/sass.scss */
+.small-text {
+  font-size: 9px;
+}
+@media (min-width: 668px) and (max-width: 1023px) {
+  /* line 61, ../sass/sass.scss */
+  .small-text {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  /* line 61, ../sass/sass.scss */
+  .small-text {
+    font-size: 27px;
+  }
+}
+
+/* line 70, ../sass/sass.scss */
+.upper-left {
+  left: 6%;
+  top: 6%;
+  transform: translate(-10%, 0);
+}
+
+/* line 75, ../sass/sass.scss */
+.upper-right {
+  right: 6%;
+  top: 6%;
+  transform: translate(0%, 0);
+}
+
+/* line 80, ../sass/sass.scss */
+.bottom {
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%, 0%);
+}
+
+/* line 85, ../sass/sass.scss */
+.subtitle {
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, 0%);
+}
+
+/* line 90, ../sass/sass.scss */
+a {
+  color: #111111;
+  text-decoration: none;
+}
+
+/* line 94, ../sass/sass.scss */
+a:visited {
+  color: #111111;
+  text-decoration: none;
 }

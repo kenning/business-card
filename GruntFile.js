@@ -44,8 +44,8 @@ module.exports = function(grunt) {
     cssmin: {
       target: {
         files: {
-          './public/dist/sass.min.css' : ['./public/sass.css'],
-          './public/dist/cardanimate.min.css' : ['./public/cardanimate.css']
+          './css/dist/sass.min.css' : ['./css/sass.css'],
+          './css/dist/cardanimate.min.css' : ['./css/cardanimate.css']
         }
       }
     },
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         ]
       },
       css: {
-        files: 'public/*.css',
+        files: 'css/*.css',
         tasks: ['cssmin']
       }
     },
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
       options: {
         map: true,
         processors: [
-          require('autoprefixer-core')({browsers: 'last 1 version'}).postcss
+          require('autoprefixer-core')({browsers: 'last 2 versions'}).postcss
         ]
       },
       dist: {
